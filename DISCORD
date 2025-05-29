@@ -1,1 +1,220 @@
-<h1>HELLO!</h1>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>♦ ЧАРОНАВИРУС ♦ — Dota 2 Сервер</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cinzel', serif;
+      background: linear-gradient(135deg, #0f0f0f, #1b1a1a);
+      color: #e0c38d;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      width: 250px;
+      background: #121212;
+      border-right: 2px solid #3a2c1f;
+      padding: 20px;
+      animation: fadeInLeft 1s ease-in-out;
+    }
+
+    .sidebar h2 {
+      font-size: 16px;
+      color: #cfa85c;
+      margin-bottom: 10px;
+      transition: 0.3s;
+    }
+
+    .channel {
+      padding: 10px 14px;
+      background-color: #1c1c1c;
+      border-left: 3px solid #3a2c1f;
+      margin: 6px 0;
+      color: #c4a96f;
+      cursor: pointer;
+      transition: all 0.3s;
+      border-radius: 3px;
+    }
+
+    .channel:hover {
+      background-color: #292524;
+      color: #ffe8b2;
+      transform: translateX(5px);
+      box-shadow: 0 0 10px #cfa85c44;
+    }
+
+    .main {
+      flex: 1;
+      background: url('https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/backgrounds/bg_header.jpg') no-repeat center center / cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      text-align: center;
+      padding: 40px;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    .main h1 {
+      font-size: 42px;
+      color: #ffcc80;
+      text-shadow: 2px 2px 5px #000;
+      margin-bottom: 10px;
+      transition: 0.3s;
+    }
+
+    .main h1:hover {
+      color: #fff4c0;
+      transform: scale(1.02);
+    }
+
+    .main p {
+      font-size: 18px;
+      color: #ddd;
+      max-width: 600px;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 2px #000;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .join-button {
+      padding: 12px 24px;
+      background-color: transparent;
+      border: 2px solid #cfa85c;
+      color: #e0c38d;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+      border-radius: 6px;
+      box-shadow: 0 0 10px #cfa85c33;
+    }
+
+    .join-button:hover {
+      background-color: #cfa85c;
+      color: #1a1a1a;
+      box-shadow: 0 0 20px #cfa85c;
+      transform: scale(1.05);
+    }
+
+    .logo {
+      width: 100px;
+      margin-bottom: 15px;
+      filter: drop-shadow(0 0 10px #cfa85c88);
+      transition: 0.4s ease;
+    }
+
+    .logo:hover {
+      transform: rotate(-3deg) scale(1.1);
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #999;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    /* Loading overlay */
+    .loading-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      flex-direction: column;
+    }
+
+    .spinner {
+      border: 6px solid #444;
+      border-top: 6px solid #ffcc80;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+
+    .loading-text {
+      margin-top: 15px;
+      color: #e0c38d;
+      font-size: 18px;
+    }
+
+    /* Animations */
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInLeft {
+      0% { opacity: 0; transform: translateX(-40px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Текстовые каналы</h2>
+    <div class="channel"># общее</div>
+    <div class="channel"># скрины</div>
+    <div class="channel"># роли</div>
+
+    <h2 style="margin-top: 20px;">Голосовые</h2>
+    <div class="channel">🔊 Главный офис</div>
+    <div class="channel">🔊 Dota 2</div>
+    <div class="channel">🔊 Армия</div>
+    <div class="channel">🔊 Мемы</div>
+  </div>
+
+  <div class="main">
+    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/3/31/Dota_2_logo.svg" alt="Dota 2 Logo">
+    <h1>Добро пожаловать</h1>
+    <h1>♦ ЧАРОНАВИРУС ♦</h1>
+    <p>Погрузись в тёмный мир юмора, дружбы и славы. Только для избранных героев!</p>
+    <button class="join-button" onclick="connectToServer()">Присоединиться к Discord</button>
+    <footer>© 2025 ЧАРОНАВИРУС — Inspired by Dota 2</footer>
+
+    <div class="loading-overlay" id="loading">
+      <div class="spinner"></div>
+      <div class="loading-text">Призыв в лобби...</div>
+    </div>
+  </div>
+
+  <script>
+    function connectToServer() {
+      const overlay = document.getElementById("loading");
+      overlay.style.display = "flex";
+      setTimeout(() => {
+        window.location.href = "https://discord.gg/5ySuuRzzbt"; // Заменить на настоящий инвайт
+      }, 2500);
+    }
+  </script>
+
+</body>
+</html>
